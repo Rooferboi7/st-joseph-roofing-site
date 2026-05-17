@@ -1,380 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>St. Joseph Roofing</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family:'Montserrat',sans-serif;
-background:#050505;
-color:white;
-overflow-x:hidden;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #050505;
+    color: white;
 }
 
-:root{
---gold:#d4af37;
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('truck-wrap.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.8);
-backdrop-filter:blur(10px);
-z-index:999;
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
-.nav{
-width:90%;
-max-width:1400px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-.logo{
-font-size:2rem;
-font-weight:900;
+.logo span {
+    color: #d4af37;
 }
 
-.logo span{
-color:var(--gold);
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.hero{
-min-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.45)),
-url('truck-wrap.jpg') center/cover no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:140px 20px;
+.phone {
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
-.hero-content{
-max-width:1000px;
+.button {
+    background: #d4af37;
+    color: black;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
 }
 
-.hero-top{
-color:var(--gold);
-letter-spacing:8px;
-margin-bottom:20px;
-font-size:.9rem;
-}
-
-.hero h1{
-font-size:clamp(4rem,9vw,8rem);
-line-height:.95;
-font-weight:900;
-margin-bottom:30px;
-}
-
-.hero h1 span{
-display:block;
-color:var(--gold);
-}
-
-.hero p{
-font-size:1.3rem;
-line-height:1.7;
-margin-bottom:45px;
-color:rgba(255,255,255,.9);
-}
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:18px 36px;
-border-radius:12px;
-font-weight:700;
-text-decoration:none;
-border:2px solid var(--gold);
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-.btn-gold{
-background:var(--gold);
-color:black;
-}
-
-.btn-dark{
-color:var(--gold);
-}
-
-section{
-padding:120px 5%;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:70px;
-}
-
-.section-title small{
-color:var(--gold);
-letter-spacing:6px;
-display:block;
-margin-bottom:15px;
-}
-
-.section-title h2{
-font-size:clamp(3rem,6vw,5rem);
-font-weight:900;
-line-height:1.05;
-}
-
-.section-title h2 span{
-color:var(--gold);
-}
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-max-width:1400px;
-margin:auto;
-}
-
-.card{
-background:#0d0d0d;
-border:1px solid rgba(212,175,55,.2);
-border-radius:22px;
-overflow:hidden;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:var(--gold);
-}
-
-.card img{
-width:100%;
-height:240px;
-object-fit:cover;
-}
-
-.card-content{
-padding:30px;
-}
-
-.card-number{
-width:60px;
-height:60px;
-border-radius:14px;
-background:var(--gold);
-color:black;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:900;
-margin-bottom:25px;
-font-size:1.5rem;
-}
-
-.card h3{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.card p{
-line-height:1.8;
-color:rgba(255,255,255,.75);
-}
-
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-max-width:1400px;
-margin:auto;
-}
-
-.projects-grid img{
-width:100%;
-height:320px;
-object-fit:cover;
-border-radius:20px;
-border:1px solid rgba(212,175,55,.2);
-transition:.4s;
-}
-
-.projects-grid img:hover{
-transform:scale(1.03);
-}
-
-.cta{
-background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
-url('roof4.jpg') center/cover no-repeat;
-text-align:center;
-padding:140px 5%;
-}
-
-.cta h2{
-font-size:clamp(3rem,6vw,5rem);
-margin-bottom:20px;
-line-height:1.1;
-}
-
-.cta h2 span{
-color:var(--gold);
-}
-
-footer{
-padding:60px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:rgba(255,255,255,.5);
-}
-
-@media(max-width:900px){
-.hero h1{
-font-size:4.5rem;
-}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="nav">
-<div class="logo">ST. JOSEPH <span>ROOFING</span></div>
-</div>
-</header>
-
-<section class="hero">
-<div class="hero-content">
-
-<div class="hero-top">
-PREMIUM SARNIA ROOFING CONTRACTOR
-</div>
-
-<h1>
-ST. JOSEPH
-<span>ROOFING</span>
-</h1>
-
-<p>
-Honest work. Fair prices. Built to protect.
-Premium roofing installations and repairs across Sarnia and surrounding areas.
-</p>
-
-<div class="buttons">
-<a href="tel:2269321512" class="btn btn-gold">Call 226-932-1512</a>
-<a href="mailto:stjosephroofing7@gmail.com" class="btn btn-dark">Free Estimate</a>
-</div>
-
-</div>
-</section>
-
-<section>
-
-<div class="section-title">
-<small>ROOFING SERVICES</small>
-<h2>Luxury Craftsmanship. <span>Built To Last.</span></h2>
-</div>
-
-<div class="services-grid">
-
-<div class="card">
-<img src="roof1.jpg">
-<div class="card-content">
-<div class="card-number">01</div>
-<h3>Roof Installations</h3>
-<p>Premium asphalt shingle roofing systems installed with attention to detail and durability.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="roof2.jpg">
-<div class="card-content">
-<div class="card-number">02</div>
-<h3>Roof Repairs</h3>
-<p>Leak detection, storm damage repairs, and preventative maintenance to protect your home.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="roof3.jpg">
-<div class="card-content">
-<div class="card-number">03</div>
-<h3>Chimney Flashing</h3>
-<p>Professional flashing work designed to stop leaks and create a clean finished appearance.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="roof4.jpg">
-<div class="card-content">
-<div class="card-number">04</div>
-<h3>Free Estimates</h3>
-<p>Serving Sarnia and surrounding areas with honest workmanship and fair pricing.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<section>
-
-<div class="section-title">
-<small>RECENT PROJECTS</small>
-<h2>Premium Roofing <span>Gallery</span></h2>
-</div>
-
-<div class="projects-grid">
-<img src="roof1.jpg">
-<img src="roof2.jpg">
-<img src="roof3.jpg">
-<img src="roof4.jpg">
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>
-Let's Protect Your Home.
-<span>Built To Last.</span>
-</h2>
-
-<div class="buttons" style="margin-top:40px;">
-<a href="tel:2269321512" class="btn btn-gold">Call Now</a>
-<a href="mailto:stjosephroofing7@gmail.com" class="btn btn-dark">Email Us</a>
-</div>
-
-</section>
-
-<footer>
-© 2026 St. Joseph Roofing. All rights reserved.
-</footer>
-
-</body>
+.hero-content {
+    position: absolute;
+    bottom: 90px;
 </html>
