@@ -4,62 +4,436 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>St. Joseph Roofing</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
+
 body{
 font-family:'Montserrat',sans-serif;
 background:#050505;
 color:white;
 overflow-x:hidden;
 }
+
 a{
 text-decoration:none;
 color:white;
 }
+
 .hero{
-position:relative;
 min-height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
 url('truck-wrap.jpg') center center/cover no-repeat;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
 }
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:28px 60px;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(6px);
-position:sticky;
-top:0;
-z-index:100;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(4px);
 }
+
 .logo{
 font-size:2rem;
 font-weight:800;
-letter-spacing:1px;
 }
+
 .logo span{
 color:#d4af37;
 }
+
 .nav-right{
 display:flex;
-gap:25px;
 align-items:center;
+gap:25px;
 }
+
 .phone{
 font-weight:700;
+font-size:1.1rem;
 }
+
 .btn{
 background:#d4af37;
-padding:14px 26px;
+color:black;
+padding:14px 28px;
+border-radius:40px;
+font-weight:700;
+display:inline-block;
+}
+
+.hero-content{
+margin-top:auto;
+padding:0 70px 120px;
+max-width:800px;
+}
+
+.small-text{
+letter-spacing:6px;
+font-size:.9rem;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:7rem;
+line-height:.9;
+font-weight:800;
+margin-bottom:30px;
+}
+
+.hero h1 span{
+color:#d4af37;
+}
+
+.hero p{
+font-size:1.4rem;
+line-height:1.7;
+color:#ddd;
+max-width:700px;
+margin-bottom:40px;
+}
+
+.services{
+padding:120px 70px;
+background:#050505;
+}
+
+.section-label{
+letter-spacing:5px;
+font-size:.9rem;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.section-title{
+font-size:4rem;
+font-weight:800;
+line-height:1.1;
+margin-bottom:70px;
+}
+
+.section-title span{
+color:#d4af37;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0b0b0b;
+border:1px solid rgba(255,255,255,.06);
+border-radius:22px;
+padding:40px 35px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+.card-number{
+width:70px;
+height:70px;
+background:#d4af37;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+font-weight:800;
+color:black;
+margin-bottom:30px;
+}
+
+.card h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.card p{
+color:#bbb;
+line-height:1.8;
+font-size:1.05rem;
+}
+
+.about{
+padding:120px 70px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+background:#090909;
+}
+
+.about img{
+width:100%;
+border-radius:25px;
+}
+
+.about h2{
+font-size:4rem;
+line-height:1.1;
+margin-bottom:30px;
+}
+
+.about h2 span{
+color:#d4af37;
+}
+
+.about p{
+color:#bbb;
+line-height:1.9;
+font-size:1.1rem;
+margin-bottom:35px;
+}
+
+.bullets{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.bullets div{
+font-size:1.05rem;
+color:#ddd;
+}
+
+.cta{
+padding:120px 70px;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('roof4.jpg') center center/cover no-repeat;
+}
+
+.cta h2{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.cta h2 span{
+color:#d4af37;
+}
+
+.cta p{
+max-width:700px;
+margin:0 auto 40px;
+font-size:1.2rem;
+line-height:1.8;
+color:#ddd;
+}
+
+footer{
+padding:50px 70px;
+background:black;
+border-top:1px solid rgba(255,255,255,.06);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:20px;
+}
+
+footer p{
+color:#999;
+}
+
+@media(max-width:900px){
+
+nav{
+padding:22px 25px;
+}
+
+.hero-content{
+padding:0 25px 90px;
+}
+
+.hero h1{
+font-size:4.5rem;
+}
+
+.services,
+.about,
+.cta,
+footer{
+padding-left:25px;
+padding-right:25px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.section-title,
+.about h2,
+.cta h2{
+font-size:3rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<nav>
+<div class="logo">
+ST. JOSEPH <span>ROOFING</span>
+</div>
+
+<div class="nav-right">
+<div class="phone">226-932-1512</div>
+<a href="#" class="btn">Free Estimate</a>
+</div>
+</nav>
+
+<div class="hero-content">
+
+<div class="small-text">
+PREMIUM SARNIA ROOFING CONTRACTOR
+</div>
+
+<h1>
+BUILT TO<br>
+<span>PROTECT.</span>
+</h1>
+
+<p>
+Premium roofing installations, roof repairs, chimney flashing, and honest workmanship across Sarnia and surrounding areas.
+</p>
+
+<a href="#" class="btn">
+Get Free Estimate
+</a>
+
+</div>
+
+</section>
+
+<section class="services">
+
+<div class="section-label">
+ROOFING SERVICES
+</div>
+
+<h2 class="section-title">
+Luxury Craftsmanship.<br>
+<span>Built To Last.</span>
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-number">01</div>
+<h3>Roof Installations</h3>
+<p>
+Premium asphalt shingle roofing systems installed with attention to detail and long-term durability.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">02</div>
+<h3>Roof Repairs</h3>
+<p>
+Leak detection, storm damage repairs, and preventative maintenance to protect your home.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">03</div>
+<h3>Chimney Flashing</h3>
+<p>
+Clean flashing installations designed to stop leaks and create a professional finished appearance.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">04</div>
+<h3>Free Estimates</h3>
+<p>
+Serving Sarnia and surrounding areas with honest workmanship and fair pricing.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div>
+<h2>
+Why Choose<br>
+<span>St. Joseph Roofing?</span>
+</h2>
+
+<p>
+We focus on premium workmanship, honest pricing, and dependable roofing solutions built to protect your home for years to come.
+</p>
+
+<div class="bullets">
+<div>✔ Honest & Fair Pricing</div>
+<div>✔ Premium Materials</div>
+<div>✔ Clean Professional Workmanship</div>
+<div>✔ Serving Sarnia & Lambton County</div>
+</div>
+
+</div>
+
+<div>
+<img src="roof3.jpg">
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+Let’s Protect Your Home.<br>
+<span>Built With Integrity.</span>
+</h2>
+
+<p>
+Get a free no-obligation estimate today for roofing installations, repairs, chimney flashing, and exterior roofing services.
+</p>
+
+<a href="#" class="btn">
+Call 226-932-1512
+</a>
+
+</section>
+
+<footer>
+
+<div class="logo">
+ST. JOSEPH <span>ROOFING</span>
+</div>
+
+<p>
+© 2026 St. Joseph Roofing. All rights reserved.
+</p>
+
+</footer>
+
+</body>
 </html>
