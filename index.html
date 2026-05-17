@@ -31,28 +31,40 @@ color:white;
 .hero{
 min-height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
 url('truck-wrap.jpg') center center/cover no-repeat;
-display:flex;
-flex-direction:column;
+position:relative;
 }
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:28px 60px;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(4px);
+padding:28px 55px;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:15px;
 font-size:2rem;
 font-weight:800;
 }
 
 .logo span{
 color:#d4af37;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+font-size:.95rem;
+font-weight:600;
 }
 
 .nav-right{
@@ -63,47 +75,51 @@ gap:25px;
 
 .phone{
 font-weight:700;
-font-size:1.1rem;
+color:#d4af37;
 }
 
 .btn{
-background:#d4af37;
-color:black;
 padding:14px 28px;
+border:2px solid #d4af37;
 border-radius:40px;
 font-weight:700;
-display:inline-block;
+transition:.3s;
 }
 
-.hero-content{
-margin-top:auto;
-padding:0 70px 120px;
-max-width:800px;
+.btn:hover{
+background:#d4af37;
+color:black;
 }
 
-.small-text{
+.hero-overlay{
+position:absolute;
+bottom:90px;
+left:70px;
+max-width:700px;
+}
+
+.hero-small{
 letter-spacing:6px;
 font-size:.9rem;
 color:#d4af37;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
-.hero h1{
+.hero-title{
 font-size:7rem;
-line-height:.9;
 font-weight:800;
-margin-bottom:30px;
+line-height:.9;
+margin-bottom:25px;
 }
 
-.hero h1 span{
+.hero-title span{
 color:#d4af37;
 }
 
-.hero p{
-font-size:1.4rem;
+.hero-text{
+font-size:1.3rem;
 line-height:1.7;
 color:#ddd;
-max-width:700px;
 margin-bottom:40px;
 }
 
@@ -112,7 +128,7 @@ padding:120px 70px;
 background:#050505;
 }
 
-.section-label{
+.section-small{
 letter-spacing:5px;
 font-size:.9rem;
 color:#d4af37;
@@ -120,7 +136,7 @@ margin-bottom:20px;
 }
 
 .section-title{
-font-size:4rem;
+font-size:4.5rem;
 font-weight:800;
 line-height:1.1;
 margin-bottom:70px;
@@ -130,45 +146,49 @@ margin-bottom:70px;
 color:#d4af37;
 }
 
-.cards{
+.service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
 gap:30px;
 }
 
-.card{
+.service-card{
 background:#0b0b0b;
 border:1px solid rgba(255,255,255,.06);
-border-radius:22px;
-padding:40px 35px;
+border-radius:24px;
+overflow:hidden;
 transition:.3s;
 }
 
-.card:hover{
+.service-card:hover{
 transform:translateY(-8px);
 border-color:#d4af37;
 }
 
-.card-number{
-width:70px;
-height:70px;
-background:#d4af37;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
+.service-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+display:block;
+}
+
+.service-content{
+padding:35px;
+}
+
+.service-number{
+color:#d4af37;
 font-size:2rem;
 font-weight:800;
-color:black;
-margin-bottom:30px;
+margin-bottom:15px;
 }
 
-.card h3{
+.service-content h3{
 font-size:2rem;
-margin-bottom:20px;
+margin-bottom:18px;
 }
 
-.card p{
+.service-content p{
 color:#bbb;
 line-height:1.8;
 font-size:1.05rem;
@@ -185,7 +205,7 @@ background:#090909;
 
 .about img{
 width:100%;
-border-radius:25px;
+border-radius:26px;
 }
 
 .about h2{
@@ -199,34 +219,53 @@ color:#d4af37;
 }
 
 .about p{
-color:#bbb;
-line-height:1.9;
 font-size:1.1rem;
-margin-bottom:35px;
+line-height:1.9;
+color:#bbb;
+margin-bottom:30px;
 }
 
-.bullets{
+.about-list{
 display:flex;
 flex-direction:column;
-gap:16px;
+gap:15px;
 }
 
-.bullets div{
+.about-list div{
 font-size:1.05rem;
-color:#ddd;
+}
+
+.projects{
+padding:120px 70px;
+background:#050505;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.project-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.06);
 }
 
 .cta{
 padding:120px 70px;
-text-align:center;
 background:
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url('roof4.jpg') center center/cover no-repeat;
+text-align:center;
 }
 
 .cta h2{
 font-size:4rem;
-margin-bottom:20px;
+line-height:1.1;
+margin-bottom:25px;
 }
 
 .cta h2 span{
@@ -234,43 +273,61 @@ color:#d4af37;
 }
 
 .cta p{
-max-width:700px;
+max-width:750px;
 margin:0 auto 40px;
+line-height:1.9;
 font-size:1.2rem;
-line-height:1.8;
 color:#ddd;
 }
 
+.cta-button{
+display:inline-block;
+background:#d4af37;
+color:black;
+padding:18px 36px;
+border-radius:50px;
+font-weight:800;
+}
+
 footer{
-padding:50px 70px;
+padding:60px 70px;
 background:black;
 border-top:1px solid rgba(255,255,255,.06);
 display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
-gap:20px;
+gap:30px;
 }
 
 footer p{
-color:#999;
+color:#888;
 }
 
-@media(max-width:900px){
+@media(max-width:950px){
 
 nav{
-padding:22px 25px;
+padding:20px 25px;
+flex-direction:column;
+gap:20px;
 }
 
-.hero-content{
-padding:0 25px 90px;
+.nav-links{
+display:none;
 }
 
-.hero h1{
+.hero-overlay{
+left:25px;
+right:25px;
+bottom:60px;
+}
+
+.hero-title{
 font-size:4.5rem;
 }
 
 .services,
 .about,
+.projects,
 .cta,
 footer{
 padding-left:25px;
@@ -297,33 +354,44 @@ font-size:3rem;
 <section class="hero">
 
 <nav>
+
 <div class="logo">
 ST. JOSEPH <span>ROOFING</span>
 </div>
 
+<div class="nav-links">
+<a href="#">HOME</a>
+<a href="#">SERVICES</a>
+<a href="#">ABOUT</a>
+<a href="#">PROJECTS</a>
+<a href="#">REVIEWS</a>
+<a href="#">CONTACT</a>
+</div>
+
 <div class="nav-right">
 <div class="phone">226-932-1512</div>
-<a href="#" class="btn">Free Estimate</a>
+<a href="#" class="btn">FREE ESTIMATE</a>
 </div>
+
 </nav>
 
-<div class="hero-content">
+<div class="hero-overlay">
 
-<div class="small-text">
+<div class="hero-small">
 PREMIUM SARNIA ROOFING CONTRACTOR
 </div>
 
-<h1>
+<div class="hero-title">
 BUILT TO<br>
 <span>PROTECT.</span>
-</h1>
+</div>
 
-<p>
-Premium roofing installations, roof repairs, chimney flashing, and honest workmanship across Sarnia and surrounding areas.
-</p>
+<div class="hero-text">
+Premium roofing installations, repairs, and chimney flashing across Sarnia and surrounding areas.
+</div>
 
 <a href="#" class="btn">
-Get Free Estimate
+GET FREE ESTIMATE
 </a>
 
 </div>
@@ -332,47 +400,59 @@ Get Free Estimate
 
 <section class="services">
 
-<div class="section-label">
+<div class="section-small">
 ROOFING SERVICES
 </div>
 
-<h2 class="section-title">
-Luxury Craftsmanship.<br>
-<span>Built To Last.</span>
-</h2>
+<div class="section-title">
+Built To Protect.<br>
+<span>Designed To Last.</span>
+</div>
 
-<div class="cards">
+<div class="service-grid">
 
-<div class="card">
-<div class="card-number">01</div>
+<div class="service-card">
+<img src="roof1.jpg">
+<div class="service-content">
+<div class="service-number">01</div>
 <h3>Roof Installations</h3>
 <p>
-Premium asphalt shingle roofing systems installed with attention to detail and long-term durability.
+Premium asphalt shingle installations with clean workmanship and long-lasting durability.
 </p>
 </div>
+</div>
 
-<div class="card">
-<div class="card-number">02</div>
+<div class="service-card">
+<img src="roof2.jpg">
+<div class="service-content">
+<div class="service-number">02</div>
 <h3>Roof Repairs</h3>
 <p>
-Leak detection, storm damage repairs, and preventative maintenance to protect your home.
+Fast, reliable roofing repairs for leaks, wind damage, and preventative maintenance.
 </p>
 </div>
+</div>
 
-<div class="card">
-<div class="card-number">03</div>
+<div class="service-card">
+<img src="roof3.jpg">
+<div class="service-content">
+<div class="service-number">03</div>
 <h3>Chimney Flashing</h3>
 <p>
-Clean flashing installations designed to stop leaks and create a professional finished appearance.
+Professional flashing installations designed to stop leaks and protect your roof system.
 </p>
 </div>
+</div>
 
-<div class="card">
-<div class="card-number">04</div>
+<div class="service-card">
+<img src="roof4.jpg">
+<div class="service-content">
+<div class="service-number">04</div>
 <h3>Free Estimates</h3>
 <p>
-Serving Sarnia and surrounding areas with honest workmanship and fair pricing.
+Serving Sarnia and Lambton County with honest workmanship and fair pricing.
 </p>
+</div>
 </div>
 
 </div>
@@ -382,16 +462,17 @@ Serving Sarnia and surrounding areas with honest workmanship and fair pricing.
 <section class="about">
 
 <div>
+
 <h2>
 Why Choose<br>
 <span>St. Joseph Roofing?</span>
 </h2>
 
 <p>
-We focus on premium workmanship, honest pricing, and dependable roofing solutions built to protect your home for years to come.
+We treat every roof like it’s our own. Our commitment to premium workmanship, honest pricing, and dependable roofing solutions sets us apart.
 </p>
 
-<div class="bullets">
+<div class="about-list">
 <div>✔ Honest & Fair Pricing</div>
 <div>✔ Premium Materials</div>
 <div>✔ Clean Professional Workmanship</div>
@@ -402,6 +483,26 @@ We focus on premium workmanship, honest pricing, and dependable roofing solution
 
 <div>
 <img src="roof3.jpg">
+</div>
+
+</section>
+
+<section class="projects">
+
+<div class="section-small">
+RECENT PROJECTS
+</div>
+
+<div class="section-title">
+Real Homes.<br>
+<span>Real Results.</span>
+</div>
+
+<div class="project-grid">
+<img src="roof1.jpg">
+<img src="roof2.jpg">
+<img src="roof3.jpg">
+<img src="roof4.jpg">
 </div>
 
 </section>
@@ -417,8 +518,8 @@ Let’s Protect Your Home.<br>
 Get a free no-obligation estimate today for roofing installations, repairs, chimney flashing, and exterior roofing services.
 </p>
 
-<a href="#" class="btn">
-Call 226-932-1512
+<a href="#" class="cta-button">
+CALL 226-932-1512
 </a>
 
 </section>
